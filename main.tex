@@ -16,6 +16,7 @@
 \colorlet{LightGray}{White!90!Periwinkle}
 \colorlet{LightOrange}{Orange!15}
 \colorlet{LightGreen}{Green!15}
+\colorlet{LightBlue}{Cyan!15}
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
@@ -30,6 +31,19 @@
 \declaretheoremstyle[name=Principle,]{prcpsty}
 \declaretheorem[style=prcpsty,numberlike=theorem]{principle}
 \tcolorboxenvironment{principle}{colback=LightGreen}
+
+\declaretheoremstyle[
+    name=Definition,
+    headfont=\bfseries, % bold heading
+    notebraces={(}{)},  % format for the heading
+    headpunct={:},      % punctuation after the heading
+    postheadspace=1em,  % space after the heading
+    spaceabove=\baselineskip,
+    spacebelow=\baselineskip,
+]{defsty}
+\declaretheorem[style=defsty,numberlike=theorem]{definition}
+\tcolorboxenvironment{definition}{colback=LightBlue}
+
 
 \setstretch{1.2}
 \geometry{
@@ -69,6 +83,8 @@
 
 % ------------------------------------------------------------------------------
 
+\include{sections/sec1_overview}
+\include{sections/sec2_definitions}
 \section{Examples}
 
 \begin{theorem}
