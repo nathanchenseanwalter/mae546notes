@@ -32,6 +32,13 @@
 \declaretheorem[style=prcpsty,numberlike=theorem]{principle}
 \tcolorboxenvironment{principle}{colback=LightGreen}
 
+\declaretheoremstyle[name=Summary,]{sumsty}
+\declaretheorem[style=sumsty, numbered=no]{summary}
+\tcolorboxenvironment{summary}{standard jigsaw, opacityback=0}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
 \declaretheoremstyle[
     name=Definition,
     headfont=\bfseries, % bold heading
@@ -43,6 +50,17 @@
 ]{defsty}
 \declaretheorem[style=defsty,numberlike=theorem]{definition}
 \tcolorboxenvironment{definition}{colback=LightBlue}
+
+\declaretheoremstyle[
+    name=Example,
+    headfont=\itshape, % italicized heading
+    notebraces={(}{)},  % format for the heading
+    headpunct={:},      % punctuation after the heading
+    postheadspace=1em,  % space after the heading
+    spaceabove=\baselineskip,
+    spacebelow=\baselineskip,
+]{exsty}
+\declaretheorem[style=exsty,numberwithin=theorem]{example}
 
 
 \setstretch{1.2}
@@ -83,36 +101,8 @@
 
 % ------------------------------------------------------------------------------
 
-\include{sections/sec1_overview}
-\include{sections/sec2_definitions}
-\section{Examples}
-
-\begin{theorem}
-    This is a theorem.
-\end{theorem}
-
-\begin{proposition}
-    This is a proposition.
-\end{proposition}
-
-\begin{principle}
-    This is a principle.
-\end{principle}
-
-% Maybe I need to add one more part: Examples.
-% Set style and colour later.
-
-\subsection{Pictures}
-
-\begin{figure}[htbp]
-    \center
-    \includegraphics[scale=0.06]{img/photo.jpg}
-    \caption{Sydney, NSW}
-\end{figure}
-
-\subsection{Citation}
-
-This is a citation\cite{Eg}.
+\include{sections/sec1_introduction}
+\include{sections/sec2_optimization_conditions}
 
 \newpage
 
