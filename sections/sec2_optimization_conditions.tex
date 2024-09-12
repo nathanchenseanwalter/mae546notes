@@ -179,9 +179,6 @@ Theorems:
         \pdv{f}{x}_{x^*} = 0
     \end{equation*}
 
-    \begin{proof}
-        asfdf
-    \end{proof}
 \end{theorem}
 
 \begin{definition}[Stationary Point]
@@ -217,9 +214,73 @@ Theorems:
     \begin{equation}
         \pdv[2]{f}{x}\big|_{x^*} \ge 0
     \end{equation}
-    
-    \begin{proof}
-        Since $x^*$ is a local minimum, we have that $\partial_xf|_{x^*} = 0$. Then, by Taylor's formula, there exists a $y\in (x^*,x)\subset \Omega^\circ$ such that with $\delta x = x-x^*$, we have 
-    \end{proof}
 
 \end{theorem}
+
+\begin{theorem}[Second Order Sufficient Condition; $(\mathbb{R},d)$]
+    
+    Prerequisites
+    \begin{itemize}
+        \item Let $x^* \in \Omega^\circ \subseteq \mathbb{R}$
+        \item Assume $f \in C^2_b(\Omega;\mathbb{R})$
+        \item If $\pdv{f}{x}|_{x^*} = 0$ and $\pdv[2]{f}{x}|_{x^*} > 0$ hold
+    \end{itemize}
+
+    Then $x^*$ is a strict local minimum for $f$.
+\end{theorem}
+
+\begin{definition}[Unit Sphere]
+    
+    Defining
+    \begin{itemize}
+        \item $S^n(x,d)\subset \mathbb{R}^{n+1}$ for $n \in \mathbb{N}$: unit sphere
+        \item $x\in \mathbb{R}^{n+1}$: a point
+        \item $d$: a metric on $\mathbb{R}^{n+1}$
+    \end{itemize}
+
+    Then the complete definition is $S^n(x,d) \equiv \{y\in \mathbb{R}^{n+1} : d(x,y) = 1\}$
+
+    \begin{remark}
+        If $S^n$ is denoted without $x$ and $d$, then it can be assumed that $x=0$ and $d$ is the standard $l_2$ metric.
+    \end{remark}
+    
+\end{definition}
+
+\begin{theorem}[First Order Necessary Condition; $(\mathbb{R}^n,d)$]
+    
+    Given
+    \begin{itemize}
+        \item $f\in C^1(\Omega;\mathbb{R})$
+        \item $x^* \in \Omega^\circ \subseteq \mathbb{R}^n$
+    \end{itemize}
+
+    If $x^*$ is a local minimum for $f$, then
+    
+    \begin{equation*}
+        \nabla f\big|_{x^*} \equiv \bigg(\pdv{f}{x_1}\bigg|,\cdots,\pdv{f}{x_n}\bigg|_{x^*}\bigg) = 0 \in \mathbb{R}^n
+    \end{equation*}
+    
+\end{theorem}
+
+\begin{definition}[Hessian Matrix]
+    
+    Given
+    \begin{itemize}
+        \item $f\in C^2(\mathbb{R}^n;\mathbb{R})$
+        \item $\mathbb{S}(n;\mathbb{R}) = \mathbb{S}(n)$: an $n\times n$ symmetric matrix
+    \end{itemize}
+
+    The Hessian matrix of $f$ evaluated at $x \in \mathbb{R}$ is
+
+    \begin{equation}
+        \nabla^{\otimes 2}_x f = \nabla^2_x = \begin{bmatrix}
+            \pdv[2]{f}{x_1} & \cdots & \pdv{f}{x_1x_n} \\
+            \vdots & \ddots & \vdots \\
+            \pdv{f}{x_nx_1} & \cdots & \pdv[2]{f}{x_n}
+        \end{bmatrix}
+    \end{equation}
+
+    \begin{remark}
+        Every $A\in \mathbb{S}(n)$ can be expressed as $A = U\Lambda U^T$ where the columns of $U$ are the eigenvectors of $A$ and the diagonal of $\Lambda$ is the eigenvalues of $A$.
+    \end{remark}
+\end{definition}

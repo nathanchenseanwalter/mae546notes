@@ -21,8 +21,17 @@
 
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 
-\declaretheoremstyle[name=Theorem,]{thmsty}
-\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\declaretheoremstyle[
+    name=Theorem,
+    headfont=\bfseries, % bold heading
+    notebraces={(}{)},  % format for the heading
+    headpunct={:},      % punctuation after the heading
+    postheadhook = {\hspace*{\parindent}},
+    postheadspace=1em,  % space after the heading
+    spaceabove=\baselineskip,
+    spacebelow=\baselineskip,
+]{defsty}
+\declaretheorem[style=defsty,numberwithin=section]{theorem}
 \tcolorboxenvironment{theorem}{colback=LightGray}
 
 \declaretheoremstyle[name=Proposition,]{prosty}
@@ -50,7 +59,7 @@
     spaceabove=\baselineskip,
     spacebelow=\baselineskip,
 ]{defsty}
-\declaretheorem[style=defsty,numberlike=theorem]{definition}
+\declaretheorem[style=defsty,numberwithin=section]{definition}
 \tcolorboxenvironment{definition}{colback=LightBlue}
 
 \declaretheoremstyle[
@@ -106,6 +115,7 @@
 
 \include{sections/sec1_introduction}
 \include{sections/sec2_optimization_conditions}
+\include{sections/sec3_constrained_optimization}
 
 \newpage
 
