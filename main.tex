@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{physics}
 \usepackage{thmtools}
 \usepackage{graphicx}
 \usepackage{setspace}
@@ -44,6 +45,7 @@
     headfont=\bfseries, % bold heading
     notebraces={(}{)},  % format for the heading
     headpunct={:},      % punctuation after the heading
+    postheadhook = {\hspace*{\parindent}},
     postheadspace=1em,  % space after the heading
     spaceabove=\baselineskip,
     spacebelow=\baselineskip,
@@ -56,6 +58,7 @@
     headfont=\itshape, % italicized heading
     notebraces={(}{)},  % format for the heading
     headpunct={:},      % punctuation after the heading
+    postheadhook = {\hspace*{\parindent}},
     postheadspace=1em,  % space after the heading
     spaceabove=\baselineskip,
     spacebelow=\baselineskip,

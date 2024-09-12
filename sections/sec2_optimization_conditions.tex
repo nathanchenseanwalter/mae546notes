@@ -16,11 +16,83 @@ Defining local and global minimum on a metric space for a cost function
 
 \end{summary}
 
+\begin{definition}[Local Minimum]
+    
+    Given
+    \begin{itemize}
+        \item $(M,d)$: a metric space
+        \item $\mathcal{T}$: a topology on $M$ induced by the metric $d$
+        \item $f: M \rightarrow \mathbb{R}$: a cost function
+    \end{itemize}
+
+    $x^* \in M$ is a local minimum of $f$ if $\exists$ neighborhood $A$ of $x^*$ such that
+    \begin{equation}
+        f(x^*) \leq f(x)\,\quad \forall x \in A
+    \end{equation}
+
+    \begin{remark}
+        $x^*$ is a strict local minimum if
+        \begin{equation}
+            f(x^*) < f(x)\,\quad \forall x \in A\backslash x^*
+        \end{equation}
+    \end{remark}
+
+\end{definition}
+
+\begin{definition}[Global Minimum]
+
+    Given
+    \begin{itemize}
+        \item $(M,d)$: a metric space
+        \item $\mathcal{T}$: a topology on $M$ induced by the metric $d$
+        \item $f: M \rightarrow \mathbb{R}$: a cost function
+    \end{itemize}
+
+    $x^* \in M$ is a global minimum of $f$ if
+    \begin{equation}
+        f(x^*) \leq f(x)\,\quad \forall x \in M
+    \end{equation}
+    
+\end{definition}
+
+\begin{definition}[Local Minimum; $(\mathbb{R}, d)$]
+
+    $x^* \in \mathbb{R}$ is a local minimum of $f: \mathbb{R} \rightarrow \mathbb{R}$ if $\exists \epsilon > 0$ such that
+    \begin{equation}
+        f(x^*) \leq f(x)\,\quad \forall x \in (x^* - \epsilon, x^* + \epsilon) = B(x^*, \epsilon)
+    \end{equation}
+
+    $x^*$ is a strict local minimum if
+    \begin{equation}
+        f(x^*) < f(x)\,\quad \forall x \in (x^* - \epsilon, x^* + \epsilon)\backslash \{x^*\}
+    \end{equation}
+
+\end{definition}
+
+\begin{definition}[Global Minimum; $(\mathbb{R}, d)$]
+
+    $x^* \in \mathbb{R}$ is a global minimum of $f: \mathbb{R} \rightarrow \mathbb{R}$ if
+    \begin{equation}
+        f(x^*) \leq f(x)\,\quad \forall x \in \mathbb{R}
+    \end{equation}
+    $x^*$ is a strict global minimum if
+    \begin{equation}
+        f(x^*) < f(x)\,\quad \forall x \in \mathbb{R}\backslash \{x^*\}
+    \end{equation}
+    
+\end{definition}
+
+\begin{definition}[Extremum]
+    
+    If $x^*$ is a local minimum or maximum, then $x^*$ is an extremum.
+
+\end{definition}
+
 \subsection{Unconstrained Smooth Parameter Optimization}
 
 \begin{summary}
 
-Deriving optimiality conditions in Euclidean space $\mathbb{R}^n$
+Deriving first and second order necessary and sufficient optimiality conditions in Euclidean space $\mathbb{R}^n$.
 
 Definitions:
 \begin{enumerate}
@@ -43,3 +115,111 @@ Theorems:
 \end{enumerate}
 
 \end{summary}
+
+\begin{definition}[Continuously Bounded Differentiable Function]
+
+    Defining
+    \begin{itemize}
+        \item $C^k(\Omega;\mathbb{R})$: real-valued $k$-times continuously differentiable functions on the set $\Omega$. So $f\in C^k(\Omega;\mathbb{R})$ is k-times differentiable, and each derivative is continuous. e.g., $\Omega \subseteq \mathbb{R}^n$
+        \item $C^k_b(\Omega;\mathbb{R})$: real-valued $k$-times continuously differentiable functions on the set $\Omega$ that are bounded
+    \end{itemize}
+    
+\end{definition}
+
+\begin{definition}[Compact Set]
+
+    Given
+    \begin{itemize}
+        \item $(M,\mathcal{T})$: a topological space
+        \item $\Omega \subseteq M$: a set
+    \end{itemize}
+
+    $\Omega$ is compact if
+    
+    \begin{itemize}
+        \item $(E_i)_{i\in I}$: open cover of $\Omega$
+        \item $(E_j)_{j\in J}$: finite subcover where $J \subseteq I$
+        \item For any $(E_i)_{i\in I}$, there exists $(E_j)_{j\in J}$.
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}[Heine-Borel Property]
+
+    A metric space has the Heine-Borel property $iff$ every compact set is closed and bounded. In particular, $\mathbb{R}^n$ with the sandard metric has this property.
+    
+\end{theorem}
+
+\begin{theorem}[Weierstrass Extreme Value]
+    
+    Let
+    \begin{itemize}
+        \item $\Omega$: a compact set
+        \item $f:\omega\to\mathbb{R}$ a continous function.
+    \end{itemize}
+
+    Then $f$ has extremums on $\Omega$.
+
+    \begin{remark}
+        If $\Omega$ is compact, then the class of functions is automatically $C^k_b(\Omega;\mathbb{R})$
+    \end{remark}
+
+\end{theorem}
+
+\begin{theorem}[First Order Necessary Condition; $(\mathbb{R},D)$]
+    
+    Given
+    \begin{itemize}
+        \item $f\in C^1(\Omega;\mathbb{R})$
+        \item $x^* \in \Omega^\circ \subseteq \mathbb{R}$
+    \end{itemize}
+
+    If $x^*$ is a local minimum for $f$, then
+    
+    \begin{equation*}
+        \pdv{f}{x}_{x^*} = 0
+    \end{equation*}
+
+    \begin{proof}
+        asfdf
+    \end{proof}
+\end{theorem}
+
+\begin{definition}[Stationary Point]
+    
+    $x^*$ is a stationary point for $f$ if
+
+    \begin{equation}
+        \partial_xf|_{x^*} = 0
+    \end{equation}
+\end{definition}
+
+\begin{theorem}[Taylor's Formula; Using Language Form of the Mean-Value of the Remainder]
+    
+    Assume
+    \begin{itemize}
+        \item $f\in C^2_b(\mathbb{R};\mathbb{R})$
+        \item $x,x^*$
+        \item $\delta x\equiv x-x^*$
+    \end{itemize}
+    
+    there exists a point $y$ between $x$ and $x^*$ such that
+
+    \begin{equation}
+        f(x) = f(x^*) + \delta_x f|_{x^*}\delta x + \frac{1}{2}\delta^2_xf|_y\delta x^2
+    \end{equation}
+
+\end{theorem}
+
+\begin{theorem}[Second Order Necessary Condition; $(\mathbb{R},d)$]
+    
+    If $x^* \in \Omega^\circ \subseteq \mathbb{R}$ is a local minimum for $f\in C^2_b(\Omega;\mathbb{R})$, then
+
+    \begin{equation}
+        \pdv[2]{f}{x}\big|_{x^*} \ge 0
+    \end{equation}
+    
+    \begin{proof}
+        Since $x^*$ is a local minimum, we have that $\partial_xf|_{x^*} = 0$. Then, by Taylor's formula, there exists a $y\in (x^*,x)\subset \Omega^\circ$ such that with $\delta x = x-x^*$, we have 
+    \end{proof}
+
+\end{theorem}
